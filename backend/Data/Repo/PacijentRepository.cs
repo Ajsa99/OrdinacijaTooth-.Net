@@ -2,6 +2,7 @@
 using backend.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace backend.Data.Repo
 {
@@ -75,8 +76,15 @@ namespace backend.Data.Repo
             {
                 throw new InvalidOperationException("The 'Pacijent' property is null.");
             }
-
             dc.Pacijent.Update(pacijent);
+        }
+
+        public async Task<IEnumerable<Pacijent>> Page(int page, int pageSize, int id)
+        {
+            int totalNumber = page * pageSize - pageSize;
+
+            var t = await dc.Pacijent!.Where(p => p.KorisnikId == id).Skip(totalNumber).Take(pageSize).ToListAsync();
+            return t;
         }
     }
 }

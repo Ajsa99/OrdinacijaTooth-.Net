@@ -12,6 +12,5 @@ namespace backend.Data
         public DbSet<Termin>? Termin { get; set; }
         public DbSet<Pregled>? Pregled { get; set; }
 
-
     }
 }

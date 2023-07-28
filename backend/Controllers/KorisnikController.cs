@@ -2,12 +2,14 @@
 using backend.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using backend.Data.Repo;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using backend.Model;
+using AutoMapper;
+using MediatR;
+using backend.Queries.PacijentQueries;
 
 namespace backend.Controllers
 {
@@ -17,35 +19,44 @@ namespace backend.Controllers
     {
         private readonly IUnitOfWork uow;
         private readonly IConfiguration configuration;
+        private readonly IMapper mapper;
+        private readonly ILogger<KorisnikController> Ilogger;
+        private readonly IMediator mediator;
 
-        public KorisnikController(IUnitOfWork uow, IConfiguration configuration)
+        public KorisnikController(IUnitOfWork uow, IConfiguration configuration, IMapper mapper, ILogger<KorisnikController> Ilogger, IMediator mediator)
         {
             this.uow = uow;
             this.configuration = configuration;
+            this.mapper = mapper;
+            this.Ilogger = Ilogger;
+            this.mediator = mediator;
         }
 
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> GetKorisnici()
         {
+
             var korisnik = await uow.KorisnikRepository.GetKorisniciAsync();
 
-            var korisnikGetDto = from u in korisnik
-                             select new GetKorisnikDto()
-                             {
-                                 Id = u.Id,
-                                 Ime = u.Ime,
-                                 Prezime = u.Prezime,
-                                 Pol = u.Pol,
-                                 DatumRodjenja = u.DatumRodjenja,
-                                 Telefon = u.Telefon,
-                                 Drzava = u.Drzava,
-                                 Grad = u.Grad,
-                                 Adresa = u.Adresa,
-                                 Email = u.Email,
-                                 Tip = u.Tip,
-                                 Odobrenje = u.Odobrenje
-                             };
+            var korisnikGetDto = mapper.Map<IEnumerable<GetKorisnikDto>>(korisnik);
+
+            //var korisnikGetDto = from u in korisnik
+            //                 select new GetKorisnikDto()
+            //                 {
+            //                     Id = u.Id,
+            //                     Ime = u.Ime,
+            //                     Prezime = u.Prezime,
+            //                     Pol = u.Pol,
+            //                     DatumRodjenja = u.DatumRodjenja,
+            //                     Telefon = u.Telefon,
+            //                     Drzava = u.Drzava,
+            //                     Grad = u.Grad,
+            //                     Adresa = u.Adresa,
+            //                     Email = u.Email,
+            //                     Tip = u.Tip,
+            //                     Odobrenje = u.Odobrenje
+            //                 };
 
             return Ok(korisnikGetDto);
         }
@@ -54,6 +65,7 @@ namespace backend.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> GetKorisnik(int id)
         {
+
             var korisnik = await uow.KorisnikRepository.GetKorisnikAsync(id);
 
             if (korisnik == null)
@@ -61,21 +73,7 @@ namespace backend.Controllers
                 return NotFound(); // Ako zahtev sa datim ID-om ne postoji, vraćamo NotFound status
             }
 
-            var GetKorisnikDto = new GetKorisnikDto()
-            {
-                Id = korisnik.Id,
-                Ime = korisnik.Ime,
-                Prezime = korisnik.Prezime,
-                Pol = korisnik.Pol,
-                DatumRodjenja = korisnik.DatumRodjenja,
-                Telefon = korisnik.Telefon,
-                Drzava = korisnik.Drzava,
-                Grad = korisnik.Grad,
-                Adresa = korisnik.Adresa,
-                Email = korisnik.Email,
-                Tip = korisnik.Tip,
-                Odobrenje = korisnik.Odobrenje
-            };
+            var GetKorisnikDto = mapper.Map<GetKorisnikDto>(korisnik);
 
             return Ok(GetKorisnikDto);
         }
@@ -132,8 +130,10 @@ namespace backend.Controllers
             var login = new LoginResDto();
             login.Email = korisnik.Email;
             login.Token = CreateJWT(korisnik);
+
             return Ok(login);
         }
+
 
         [HttpPost("/register")]
         public async Task<IActionResult> Register(LoginReqDto loginReq)
@@ -180,6 +180,48 @@ namespace backend.Controllers
 
             await uow.SaveAsync();
             return StatusCode(201);
+        }
+
+        [HttpGet("FilterKorisnik/{imePrezime}")]
+        public async Task<IActionResult> FilterKorisnik(string imePrezime)
+        {
+            var korisnici = await uow.KorisnikRepository.GetKorisniciAsync();
+
+            var korisnikGetDto = mapper.Map<IEnumerable<GetKorisnikDto>>(korisnici);
+
+            var filterKorisnici = korisnikGetDto.Where(k =>
+                k.Ime.IndexOf(imePrezime, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                k.Prezime.IndexOf(imePrezime, StringComparison.OrdinalIgnoreCase) >= 0);
+
+            return Ok(filterKorisnici);
+        }
+
+        [HttpGet("sortKorisniciIme")]
+        public IActionResult SortKorisniciIme()
+        {
+            var korisnici = uow.KorisnikRepository.GetKorisniciAsync().Result;
+
+            var KorisnikDto = mapper.Map<IEnumerable<GetKorisnikDto>>(korisnici);
+
+            // Sortiranje pacijenata po imenu (abecedno)
+            var sortiraniKorisnici = KorisnikDto.OrderBy(p => p.Ime).ToList();
+
+            return Ok(sortiraniKorisnici);
+
+
+        }
+
+        [HttpGet("sortKorisniciPrezime")]
+        public IActionResult SortKorisniciPrezime()
+        {
+            var korisnici = uow.KorisnikRepository.GetKorisniciAsync().Result;
+
+            var KorisnikDto = mapper.Map<IEnumerable<GetKorisnikDto>>(korisnici);
+
+            // Sortiranje pacijenata po prezimenu (abecedno)
+            var sortiraniKorisnici = KorisnikDto.OrderBy(p => p.Prezime).ToList();
+
+            return Ok(sortiraniKorisnici);
         }
 
     }

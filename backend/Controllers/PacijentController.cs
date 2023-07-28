@@ -1,6 +1,10 @@
-﻿using backend.Dtos;
+﻿using AutoMapper;
+using backend.Commands;
+using backend.Commands.PacijentCommands;
+using backend.Dtos;
 using backend.Interface;
-using backend.Model;
+using backend.Queries.PacijentQueries;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -13,124 +17,128 @@ namespace backend.Controllers
     public class PacijentController : ControllerBase
     {
         private readonly IUnitOfWork uow;
-        private readonly IConfiguration configuration;
+        private readonly IMapper mapper;
+        private readonly IMediator mediator;
 
-        public PacijentController(IUnitOfWork uow, IConfiguration configuration)
+        public PacijentController(IUnitOfWork uow, IMapper mapper, IMediator mediator)
         {
             this.uow = uow;
-            this.configuration = configuration;
+            this.mapper = mapper;
+            this.mediator = mediator;
         }
 
         [HttpGet("getPacijenti")]
         public async Task<IActionResult> GetPacijenti()
         {
-            var pacijent = await uow.PacijentRepository.GetPacijentiAsync();
 
-            var GetPacijentDto = from p in pacijent
-                                 select new GetPacijentDto()
-                                 {
-                                     Id = p.Id,
-                                     Ime = p.Ime,
-                                     Prezime = p.Prezime,
-                                     Pol = p.Pol,
-                                     DatumRodjenja = p.DatumRodjenja,
-                                     Telefon = p.Telefon,
-                                     Drzava = p.Drzava,
-                                     Grad = p.Grad,
-                                     Adresa = p.Adresa,
-                                     Email = p.Email,
-                                     KorisnikId = p.KorisnikId,
-                                 };
-
-            return Ok(GetPacijentDto);
+            var query = new GetPacijentiQuery();
+            var result = await mediator.Send(query);
+            return Ok(result);
         }
-
-  
 
         [HttpGet("getPacijent/{id}")]
         public async Task<IActionResult> GetPacijent(int id)
         {
-            var pacijent = await uow.PacijentRepository.GetPacijentAsync(id);
+            var query = new GetPacijentIdQuery(id);
+            var result = await mediator.Send(query);
+            return Ok(result);
 
-            if (pacijent == null)
-            {
-                return NotFound(); // Ako zahtev sa datim ID-om ne postoji, vraćamo NotFound status
-            }
+            //var pacijent = await uow.PacijentRepository.GetPacijentAsync(id);
 
-            var GetPacijentDto = new GetPacijentDto()
-            {
-                Id = pacijent.Id,
-                Ime = pacijent.Ime,
-                Prezime = pacijent.Prezime,
-                Pol = pacijent.Pol,
-                DatumRodjenja = pacijent.DatumRodjenja,
-                Telefon = pacijent.Telefon,
-                Drzava = pacijent.Drzava,
-                Grad = pacijent.Grad,
-                Adresa = pacijent.Adresa,
-                Email = pacijent.Email,
-                KorisnikId = pacijent.KorisnikId,
-            };
+            //if (pacijent == null)
+            //{
+            //    return NotFound(); // Ako zahtev sa datim ID-om ne postoji, vraćamo NotFound status
+            //}
 
-            return Ok(GetPacijentDto);
+            //var GetPacijentDto = mapper.Map<GetPacijentDto>(pacijent);
+
+            //return Ok(GetPacijentDto);
         }
 
         [HttpPost("addPacijent")]
         public async Task<IActionResult> AddPacijent(PacijentDto pacijentDto)
         {
+            var command = new CreatePacijentCommand(pacijentDto);
+            var result = await mediator.Send(command);
+            return Ok(result);
 
-            var pacijent = new Pacijent
-            {
-                Ime = pacijentDto.Ime,
-                Prezime = pacijentDto.Prezime,
-                Pol = pacijentDto.Pol,
-                DatumRodjenja = pacijentDto.DatumRodjenja,
-                Drzava = pacijentDto.Drzava,
-                Grad = pacijentDto.Grad,
-                Adresa = pacijentDto.Adresa,
-                Telefon = pacijentDto.Telefon,
-                Email = pacijentDto.Email,
-                KorisnikId = pacijentDto.KorisnikId,
-            };
+            //var pacijent = mapper.Map<Pacijent>(pacijentDto);
 
-            uow.PacijentRepository.AddPacijent(pacijent);
-            await uow.SaveAsync();
-            return StatusCode(201);
+            //uow.PacijentRepository.AddPacijent(pacijent);
+            //await uow.SaveAsync();
+            //return StatusCode(201);
         }
 
         [HttpDelete("DeletePacijent/{id}")]
         public async Task<IActionResult> DeletePacijent(int id)
         {
-             uow.PacijentRepository.DeletePacijent(id);
+            var command = new DeletePacijentCommand(id);
+            var result = await mediator.Send(command);
+            return Ok(result);
 
-            await uow.SaveAsync();
-            return StatusCode(201);
+            //uow.PacijentRepository.DeletePacijent(id);
+
+            //await uow.SaveAsync();
+            //return StatusCode(201);
         }
 
         [HttpPut("editPacijent/{id}")]
         public async Task<IActionResult> EditPacijent(int id, UpdatePacijentDto pacijentDto)
         {
-            var pacijent = await uow.PacijentRepository.GetPacijentAsync(id);
+            var command = new EditPacijentCommand(id, pacijentDto);
+            var result = await mediator.Send(command);
 
-            if (pacijent == null)
-            {
-                return NotFound();
-            }
+            return Ok(result);
+            //var pacijent = await uow.PacijentRepository.GetPacijentAsync(id);
 
-            pacijent.Ime = pacijentDto.Ime;
-            pacijent.Prezime = pacijentDto.Prezime;
-            pacijent.Pol = pacijentDto.Pol;
-            pacijent.DatumRodjenja = pacijentDto.DatumRodjenja;
-            pacijent.Drzava = pacijentDto.Drzava;
-            pacijent.Grad = pacijentDto.Grad;
-            pacijent.Adresa = pacijentDto.Adresa;
-            pacijent.Telefon = pacijentDto.Telefon;
-            pacijent.Email = pacijentDto.Email;
+            //if (pacijent == null)
+            //{
+            //    return NotFound();
+            //}
 
-            uow.PacijentRepository.UpdatePacijent(pacijent);
-            await uow.SaveAsync();
+            //mapper.Map(pacijentDto, pacijent);
 
-            return StatusCode(201);
+            //uow.PacijentRepository.UpdatePacijent(pacijent);
+            //await uow.SaveAsync();
+
+            //return StatusCode(201);
+        }
+
+        [HttpGet("FilterPacijent/{imePrezime}")]
+        public async Task<IActionResult> GetPacijenti(string imePrezime, [FromServices] IMediator mediator)
+        {
+            var query = new FilterPacijentiQuery { ImePrezime = imePrezime };
+            var result = await mediator.Send(query);
+
+            return Ok(result);
+        }
+
+
+        [HttpGet("sortPacijentiIme")]
+        public async Task<IActionResult> SortPacijentiIme([FromServices] IMediator mediator)
+        {
+            var query = new SortirajPacijentePoImenuQuery();
+            var result = await mediator.Send(query);
+
+            return Ok(result);
+        }
+
+        [HttpGet("sortPacijentiPrezime")]
+        public async Task<IActionResult> SortPacijentiPrezime([FromServices] IMediator mediator)
+        {
+            var query = new SortirajPacijentePoPrezimenuQuery();
+            var result = await mediator.Send(query);
+
+            return Ok(result);
+        }
+
+
+        [HttpGet("Pacijenti/Page/{page}/{pageSize}/{id}")]
+        public async Task<IActionResult> GetPacijenti(int page, int pageSize, int id)
+        {
+            var query = new GetPageQuery(page, pageSize, id);
+            var result = await mediator.Send(query);
+            return Ok(result);
         }
 
     }

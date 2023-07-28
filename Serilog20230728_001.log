@@ -1,0 +1,467 @@
+2023-07-28 16:08:12.649 +02:00 [INF] User profile is available. Using 'C:\Users\Ajsa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-07-28 16:08:13.126 +02:00 [INF] Now listening on: https://localhost:7190
+2023-07-28 16:08:13.127 +02:00 [INF] Now listening on: http://localhost:5190
+2023-07-28 16:08:13.134 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-28 16:08:13.135 +02:00 [INF] Hosting environment: Development
+2023-07-28 16:08:13.136 +02:00 [INF] Content root path: C:\Users\Ajsa\Desktop\fax\Napredne baze podataka\projekat-ZubarskaOrdinacija\backend\backend\
+2023-07-28 16:08:13.593 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/swagger/index.html - -
+2023-07-28 16:08:14.294 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/swagger/index.html - - - 200 - text/html;charset=utf-8 705.1838ms
+2023-07-28 16:08:14.296 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/_framework/aspnetcore-browser-refresh.js - -
+2023-07-28 16:08:14.296 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/_vs/browserLink - -
+2023-07-28 16:08:14.303 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 5.9677ms
+2023-07-28 16:08:14.337 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.9123ms
+2023-07-28 16:08:14.678 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/swagger/v1/swagger.json - -
+2023-07-28 16:08:14.904 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 226.1873ms
+2023-07-28 16:09:28.051 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Korisnik/2 - -
+2023-07-28 16:09:28.064 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:28.072 +02:00 [INF] Request GET /api/Korisnik/2 received.
+2023-07-28 16:09:28.081 +02:00 [INF] Executing endpoint 'backend.Controllers.KorisnikController.GetKorisnik (backend)'
+2023-07-28 16:09:28.124 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/getPacijenti - -
+2023-07-28 16:09:28.127 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:28.128 +02:00 [INF] Request GET /api/Pacijent/getPacijenti received.
+2023-07-28 16:09:28.129 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:28.150 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti() on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:09:28.153 +02:00 [INF] Route matched with {action = "GetKorisnik", controller = "Korisnik"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetKorisnik(Int32) on controller backend.Controllers.KorisnikController (backend).
+2023-07-28 16:09:31.371 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:31.371 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:33.111 +02:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+2023-07-28 16:09:33.126 +02:00 [INF] Executed DbCommand (126ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[Id], [k].[Adresa], [k].[DatumRodjenja], [k].[Drzava], [k].[Email], [k].[Grad], [k].[Ime], [k].[Odobrenje], [k].[Password], [k].[PasswordKey], [k].[Pol], [k].[Prezime], [k].[Telefon], [k].[Tip]
+FROM [Korisnik] AS [k]
+2023-07-28 16:09:33.349 +02:00 [INF] Executing OkObjectResult, writing value of type 'backend.Dtos.GetKorisnikDto'.
+2023-07-28 16:09:33.349 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:09:33.390 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 5227.0824ms
+2023-07-28 16:09:33.390 +02:00 [INF] Executed action backend.Controllers.KorisnikController.GetKorisnik (backend) in 5225.0684ms
+2023-07-28 16:09:33.391 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:33.391 +02:00 [INF] Executed endpoint 'backend.Controllers.KorisnikController.GetKorisnik (backend)'
+2023-07-28 16:09:33.392 +02:00 [INF] Request GET /api/Pacijent/getPacijenti completed in 5264 ms.
+2023-07-28 16:09:33.392 +02:00 [INF] Request GET /api/Korisnik/2 completed in 5321 ms.
+2023-07-28 16:09:33.400 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Korisnik/2 - - - 200 - application/json;+charset=utf-8 5349.3953ms
+2023-07-28 16:09:33.400 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/getPacijenti - - - 200 - application/json;+charset=utf-8 5276.3633ms
+2023-07-28 16:09:33.437 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/1/5/2 - -
+2023-07-28 16:09:33.444 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:33.444 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/1/5/2 received.
+2023-07-28 16:09:33.444 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:33.452 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:09:33.581 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:33.764 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-07-28 16:09:33.766 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-07-28 16:09:33.868 +02:00 [INF] Executed DbCommand (61ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2023-07-28 16:09:33.872 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:09:33.873 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 421.128ms
+2023-07-28 16:09:33.873 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:33.873 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/1/5/2 completed in 428 ms.
+2023-07-28 16:09:33.874 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/1/5/2 - - - 200 - application/json;+charset=utf-8 436.4303ms
+2023-07-28 16:09:33.884 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - -
+2023-07-28 16:09:33.884 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:33.885 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 received.
+2023-07-28 16:09:33.885 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:33.885 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:09:33.887 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:33.890 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-07-28 16:09:33.890 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-07-28 16:09:33.903 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-07-28 16:09:33.903 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:09:33.904 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 18.6103ms
+2023-07-28 16:09:33.904 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:33.905 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 completed in 20 ms.
+2023-07-28 16:09:33.905 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - - - 200 - application/json;+charset=utf-8 20.8650ms
+2023-07-28 16:09:50.319 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7190/login - -
+2023-07-28 16:09:50.321 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:50.324 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7190/login - - - 204 - - 4.9180ms
+2023-07-28 16:09:50.328 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7190/login application/json 59
+2023-07-28 16:09:50.328 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:50.328 +02:00 [INF] Request POST /login received.
+2023-07-28 16:09:50.328 +02:00 [INF] Executing endpoint 'backend.Controllers.KorisnikController.Login (backend)'
+2023-07-28 16:09:50.335 +02:00 [INF] Route matched with {action = "Login", controller = "Korisnik"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(backend.Dtos.LoginReq1Dto) on controller backend.Controllers.KorisnikController (backend).
+2023-07-28 16:09:50.427 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:50.446 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[Adresa], [k].[DatumRodjenja], [k].[Drzava], [k].[Email], [k].[Grad], [k].[Ime], [k].[Odobrenje], [k].[Password], [k].[PasswordKey], [k].[Pol], [k].[Prezime], [k].[Telefon], [k].[Tip]
+FROM [Korisnik] AS [k]
+WHERE [k].[Email] = @__Email_0
+2023-07-28 16:09:50.632 +02:00 [INF] Executing OkObjectResult, writing value of type 'backend.Dtos.LoginResDto'.
+2023-07-28 16:09:50.633 +02:00 [INF] Executed action backend.Controllers.KorisnikController.Login (backend) in 297.0163ms
+2023-07-28 16:09:50.633 +02:00 [INF] Executed endpoint 'backend.Controllers.KorisnikController.Login (backend)'
+2023-07-28 16:09:50.634 +02:00 [INF] Request POST /login completed in 305 ms.
+2023-07-28 16:09:50.634 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7190/login application/json 59 - 200 - application/json;+charset=utf-8 306.6732ms
+2023-07-28 16:09:51.414 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Korisnik/2 - -
+2023-07-28 16:09:51.422 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:51.424 +02:00 [INF] Request GET /api/Korisnik/2 received.
+2023-07-28 16:09:51.424 +02:00 [INF] Executing endpoint 'backend.Controllers.KorisnikController.GetKorisnik (backend)'
+2023-07-28 16:09:51.427 +02:00 [INF] Route matched with {action = "GetKorisnik", controller = "Korisnik"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetKorisnik(Int32) on controller backend.Controllers.KorisnikController (backend).
+2023-07-28 16:09:51.431 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:51.456 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[Id], [k].[Adresa], [k].[DatumRodjenja], [k].[Drzava], [k].[Email], [k].[Grad], [k].[Ime], [k].[Odobrenje], [k].[Password], [k].[PasswordKey], [k].[Pol], [k].[Prezime], [k].[Telefon], [k].[Tip]
+FROM [Korisnik] AS [k]
+2023-07-28 16:09:51.462 +02:00 [INF] Executing OkObjectResult, writing value of type 'backend.Dtos.GetKorisnikDto'.
+2023-07-28 16:09:51.463 +02:00 [INF] Executed action backend.Controllers.KorisnikController.GetKorisnik (backend) in 35.0888ms
+2023-07-28 16:09:51.464 +02:00 [INF] Executed endpoint 'backend.Controllers.KorisnikController.GetKorisnik (backend)'
+2023-07-28 16:09:51.464 +02:00 [INF] Request GET /api/Korisnik/2 completed in 41 ms.
+2023-07-28 16:09:51.465 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Korisnik/2 - - - 200 - application/json;+charset=utf-8 50.8623ms
+2023-07-28 16:09:53.686 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Korisnik/2 - -
+2023-07-28 16:09:53.686 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:53.686 +02:00 [INF] Request GET /api/Korisnik/2 received.
+2023-07-28 16:09:53.686 +02:00 [INF] Executing endpoint 'backend.Controllers.KorisnikController.GetKorisnik (backend)'
+2023-07-28 16:09:53.686 +02:00 [INF] Route matched with {action = "GetKorisnik", controller = "Korisnik"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetKorisnik(Int32) on controller backend.Controllers.KorisnikController (backend).
+2023-07-28 16:09:53.688 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:53.701 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[Id], [k].[Adresa], [k].[DatumRodjenja], [k].[Drzava], [k].[Email], [k].[Grad], [k].[Ime], [k].[Odobrenje], [k].[Password], [k].[PasswordKey], [k].[Pol], [k].[Prezime], [k].[Telefon], [k].[Tip]
+FROM [Korisnik] AS [k]
+2023-07-28 16:09:53.702 +02:00 [INF] Executing OkObjectResult, writing value of type 'backend.Dtos.GetKorisnikDto'.
+2023-07-28 16:09:53.703 +02:00 [INF] Executed action backend.Controllers.KorisnikController.GetKorisnik (backend) in 16.2135ms
+2023-07-28 16:09:53.703 +02:00 [INF] Executed endpoint 'backend.Controllers.KorisnikController.GetKorisnik (backend)'
+2023-07-28 16:09:53.703 +02:00 [INF] Request GET /api/Korisnik/2 completed in 16 ms.
+2023-07-28 16:09:53.704 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Korisnik/2 - - - 200 - application/json;+charset=utf-8 17.5021ms
+2023-07-28 16:09:53.749 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Korisnik/2 - -
+2023-07-28 16:09:53.749 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:53.750 +02:00 [INF] Request GET /api/Korisnik/2 received.
+2023-07-28 16:09:53.750 +02:00 [INF] Executing endpoint 'backend.Controllers.KorisnikController.GetKorisnik (backend)'
+2023-07-28 16:09:53.751 +02:00 [INF] Route matched with {action = "GetKorisnik", controller = "Korisnik"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetKorisnik(Int32) on controller backend.Controllers.KorisnikController (backend).
+2023-07-28 16:09:53.752 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:53.791 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[Id], [k].[Adresa], [k].[DatumRodjenja], [k].[Drzava], [k].[Email], [k].[Grad], [k].[Ime], [k].[Odobrenje], [k].[Password], [k].[PasswordKey], [k].[Pol], [k].[Prezime], [k].[Telefon], [k].[Tip]
+FROM [Korisnik] AS [k]
+2023-07-28 16:09:53.794 +02:00 [INF] Executing OkObjectResult, writing value of type 'backend.Dtos.GetKorisnikDto'.
+2023-07-28 16:09:53.794 +02:00 [INF] Executed action backend.Controllers.KorisnikController.GetKorisnik (backend) in 43.2622ms
+2023-07-28 16:09:53.794 +02:00 [INF] Executed endpoint 'backend.Controllers.KorisnikController.GetKorisnik (backend)'
+2023-07-28 16:09:53.794 +02:00 [INF] Request GET /api/Korisnik/2 completed in 44 ms.
+2023-07-28 16:09:53.795 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Korisnik/2 - - - 200 - application/json;+charset=utf-8 45.6160ms
+2023-07-28 16:09:54.466 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/getPacijenti - -
+2023-07-28 16:09:54.467 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:54.467 +02:00 [INF] Request GET /api/Pacijent/getPacijenti received.
+2023-07-28 16:09:54.467 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:54.467 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti() on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:09:54.472 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:54.496 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+2023-07-28 16:09:54.499 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:09:54.500 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 33.281ms
+2023-07-28 16:09:54.501 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:54.501 +02:00 [INF] Request GET /api/Pacijent/getPacijenti completed in 34 ms.
+2023-07-28 16:09:54.502 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/getPacijenti - - - 200 - application/json;+charset=utf-8 35.2184ms
+2023-07-28 16:09:54.518 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/1/5/2 - -
+2023-07-28 16:09:54.518 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:54.518 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/1/5/2 received.
+2023-07-28 16:09:54.519 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:54.519 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:09:54.521 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:54.536 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2023-07-28 16:09:54.537 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:09:54.537 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 18.4975ms
+2023-07-28 16:09:54.537 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:54.538 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/1/5/2 completed in 19 ms.
+2023-07-28 16:09:54.538 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/1/5/2 - - - 200 - application/json;+charset=utf-8 19.8231ms
+2023-07-28 16:09:54.548 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - -
+2023-07-28 16:09:54.549 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:54.549 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 received.
+2023-07-28 16:09:54.549 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:54.550 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:09:54.551 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:54.557 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-07-28 16:09:54.559 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:09:54.559 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 9.3198ms
+2023-07-28 16:09:54.559 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:54.559 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 completed in 10 ms.
+2023-07-28 16:09:54.560 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - - - 200 - application/json;+charset=utf-8 11.2956ms
+2023-07-28 16:09:56.576 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/FilterPacijent/k - -
+2023-07-28 16:09:56.576 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:56.576 +02:00 [INF] Request GET /api/Pacijent/FilterPacijent/k received.
+2023-07-28 16:09:56.576 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:56.583 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(System.String, MediatR.IMediator) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:09:56.590 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:56.593 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+2023-07-28 16:09:56.609 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.PacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:09:56.615 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 32.3406ms
+2023-07-28 16:09:56.615 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:56.615 +02:00 [INF] Request GET /api/Pacijent/FilterPacijent/k completed in 39 ms.
+2023-07-28 16:09:56.616 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/FilterPacijent/k - - - 200 - application/json;+charset=utf-8 40.0729ms
+2023-07-28 16:09:56.700 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/FilterPacijent/kr - -
+2023-07-28 16:09:56.701 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:56.701 +02:00 [INF] Request GET /api/Pacijent/FilterPacijent/kr received.
+2023-07-28 16:09:56.701 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:56.701 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(System.String, MediatR.IMediator) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:09:56.710 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:56.713 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+2023-07-28 16:09:56.714 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.PacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:09:56.714 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 12.528ms
+2023-07-28 16:09:56.714 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:56.715 +02:00 [INF] Request GET /api/Pacijent/FilterPacijent/kr completed in 13 ms.
+2023-07-28 16:09:56.715 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/FilterPacijent/kr - - - 200 - application/json;+charset=utf-8 14.8572ms
+2023-07-28 16:09:56.834 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/FilterPacijent/kri - -
+2023-07-28 16:09:56.836 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:56.836 +02:00 [INF] Request GET /api/Pacijent/FilterPacijent/kri received.
+2023-07-28 16:09:56.837 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:56.840 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(System.String, MediatR.IMediator) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:09:56.842 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:56.848 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+2023-07-28 16:09:56.849 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.PacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:09:56.850 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 9.0243ms
+2023-07-28 16:09:56.850 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:56.850 +02:00 [INF] Request GET /api/Pacijent/FilterPacijent/kri completed in 13 ms.
+2023-07-28 16:09:56.850 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/FilterPacijent/kri - - - 200 - application/json;+charset=utf-8 16.5848ms
+2023-07-28 16:09:57.699 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/FilterPacijent/kr - -
+2023-07-28 16:09:57.699 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:57.700 +02:00 [INF] Request GET /api/Pacijent/FilterPacijent/kr received.
+2023-07-28 16:09:57.700 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:57.700 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(System.String, MediatR.IMediator) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:09:57.701 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:57.721 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+2023-07-28 16:09:57.722 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.PacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:09:57.723 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 22.9627ms
+2023-07-28 16:09:57.723 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:57.724 +02:00 [INF] Request GET /api/Pacijent/FilterPacijent/kr completed in 24 ms.
+2023-07-28 16:09:57.724 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/FilterPacijent/kr - - - 200 - application/json;+charset=utf-8 24.9050ms
+2023-07-28 16:09:57.780 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/FilterPacijent/k - -
+2023-07-28 16:09:57.781 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:09:57.781 +02:00 [INF] Request GET /api/Pacijent/FilterPacijent/k received.
+2023-07-28 16:09:57.781 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:57.781 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(System.String, MediatR.IMediator) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:09:57.788 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:09:57.791 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+2023-07-28 16:09:57.792 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.PacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:09:57.792 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 7.128ms
+2023-07-28 16:09:57.792 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:09:57.792 +02:00 [INF] Request GET /api/Pacijent/FilterPacijent/k completed in 11 ms.
+2023-07-28 16:09:57.793 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/FilterPacijent/k - - - 200 - application/json;+charset=utf-8 12.3621ms
+2023-07-28 16:10:01.221 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/sortPacijentiIme - -
+2023-07-28 16:10:01.228 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:01.228 +02:00 [INF] Request GET /api/Pacijent/sortPacijentiIme received.
+2023-07-28 16:10:01.229 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.SortPacijentiIme (backend)'
+2023-07-28 16:10:01.237 +02:00 [INF] Route matched with {action = "SortPacijentiIme", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SortPacijentiIme(MediatR.IMediator) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:01.243 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:01.245 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+2023-07-28 16:10:01.247 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.PacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:01.247 +02:00 [INF] Executed action backend.Controllers.PacijentController.SortPacijentiIme (backend) in 9.6934ms
+2023-07-28 16:10:01.247 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.SortPacijentiIme (backend)'
+2023-07-28 16:10:01.247 +02:00 [INF] Request GET /api/Pacijent/sortPacijentiIme completed in 18 ms.
+2023-07-28 16:10:01.247 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/sortPacijentiIme - - - 200 - application/json;+charset=utf-8 26.4554ms
+2023-07-28 16:10:03.315 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/sortPacijentiPrezime - -
+2023-07-28 16:10:03.315 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:03.315 +02:00 [INF] Request GET /api/Pacijent/sortPacijentiPrezime received.
+2023-07-28 16:10:03.315 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.SortPacijentiPrezime (backend)'
+2023-07-28 16:10:03.322 +02:00 [INF] Route matched with {action = "SortPacijentiPrezime", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SortPacijentiPrezime(MediatR.IMediator) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:03.327 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:03.331 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+2023-07-28 16:10:03.333 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.PacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:03.333 +02:00 [INF] Executed action backend.Controllers.PacijentController.SortPacijentiPrezime (backend) in 11.3392ms
+2023-07-28 16:10:03.333 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.SortPacijentiPrezime (backend)'
+2023-07-28 16:10:03.333 +02:00 [INF] Request GET /api/Pacijent/sortPacijentiPrezime completed in 18 ms.
+2023-07-28 16:10:03.334 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/sortPacijentiPrezime - - - 200 - application/json;+charset=utf-8 19.0390ms
+2023-07-28 16:10:04.785 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - -
+2023-07-28 16:10:04.785 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:04.785 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 received.
+2023-07-28 16:10:04.785 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:04.785 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:04.787 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:04.802 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-07-28 16:10:04.802 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:04.803 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 17.1086ms
+2023-07-28 16:10:04.803 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:04.803 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 completed in 17 ms.
+2023-07-28 16:10:04.803 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - - - 200 - application/json;+charset=utf-8 18.3219ms
+2023-07-28 16:10:04.816 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/3/5/2 - -
+2023-07-28 16:10:04.816 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:04.816 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/3/5/2 received.
+2023-07-28 16:10:04.816 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:04.816 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:04.818 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:04.824 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2023-07-28 16:10:04.828 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:04.830 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 13.4578ms
+2023-07-28 16:10:04.831 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:04.831 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/3/5/2 completed in 14 ms.
+2023-07-28 16:10:04.831 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/3/5/2 - - - 200 - application/json;+charset=utf-8 15.3080ms
+2023-07-28 16:10:06.131 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/1/5/2 - -
+2023-07-28 16:10:06.131 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:06.131 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/1/5/2 received.
+2023-07-28 16:10:06.131 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:06.132 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:06.133 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:06.145 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2023-07-28 16:10:06.145 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:06.145 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 13.7189ms
+2023-07-28 16:10:06.146 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:06.146 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/1/5/2 completed in 14 ms.
+2023-07-28 16:10:06.146 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/1/5/2 - - - 200 - application/json;+charset=utf-8 15.4339ms
+2023-07-28 16:10:06.151 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - -
+2023-07-28 16:10:06.151 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:06.151 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 received.
+2023-07-28 16:10:06.151 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:06.152 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:06.153 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:06.162 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-07-28 16:10:06.164 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:06.165 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 13.0736ms
+2023-07-28 16:10:06.165 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:06.165 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 completed in 13 ms.
+2023-07-28 16:10:06.165 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - - - 200 - application/json;+charset=utf-8 14.1759ms
+2023-07-28 16:10:07.589 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - -
+2023-07-28 16:10:07.592 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:07.594 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 received.
+2023-07-28 16:10:07.594 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:07.595 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:07.605 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:07.621 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-07-28 16:10:07.627 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:07.628 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 32.0724ms
+2023-07-28 16:10:07.628 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:07.628 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 completed in 34 ms.
+2023-07-28 16:10:07.629 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - - - 200 - application/json;+charset=utf-8 39.2231ms
+2023-07-28 16:10:07.633 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/3/5/2 - -
+2023-07-28 16:10:07.633 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:07.633 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/3/5/2 received.
+2023-07-28 16:10:07.633 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:07.633 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:07.635 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:07.642 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2023-07-28 16:10:07.643 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:07.644 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 10.5325ms
+2023-07-28 16:10:07.645 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:07.645 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/3/5/2 completed in 11 ms.
+2023-07-28 16:10:07.645 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/3/5/2 - - - 200 - application/json;+charset=utf-8 12.5192ms
+2023-07-28 16:10:08.737 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/getPacijent/16 - -
+2023-07-28 16:10:08.738 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:08.738 +02:00 [INF] Request GET /api/Pacijent/getPacijent/16 received.
+2023-07-28 16:10:08.738 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijent (backend)'
+2023-07-28 16:10:08.739 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pregled/getTerminiPregledi/16 - -
+2023-07-28 16:10:08.740 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:08.740 +02:00 [INF] Request GET /api/Pregled/getTerminiPregledi/16 received.
+2023-07-28 16:10:08.740 +02:00 [INF] Executing endpoint 'backend.Controllers.PregledController.GetTerminiPregledi (backend)'
+2023-07-28 16:10:08.744 +02:00 [INF] Route matched with {action = "GetPacijent", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijent(Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:08.744 +02:00 [INF] Route matched with {action = "GetTerminiPregledi", controller = "Pregled"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTerminiPregledi(Int32) on controller backend.Controllers.PregledController (backend).
+2023-07-28 16:10:08.750 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:08.753 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:08.775 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+2023-07-28 16:10:08.782 +02:00 [INF] Executing OkObjectResult, writing value of type 'backend.Dtos.GetPacijentDto'.
+2023-07-28 16:10:08.782 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijent (backend) in 38.2946ms
+2023-07-28 16:10:08.782 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijent (backend)'
+2023-07-28 16:10:08.783 +02:00 [INF] Request GET /api/Pacijent/getPacijent/16 completed in 44 ms.
+2023-07-28 16:10:08.783 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/getPacijent/16 - - - 200 - application/json;+charset=utf-8 45.5717ms
+2023-07-28 16:10:08.832 +02:00 [INF] Executed DbCommand (65ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Datum], [t].[KorisnikId], [t].[PacijentId], [t].[Vreme]
+FROM [Termin] AS [t]
+2023-07-28 16:10:08.880 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[BrojZuba], [p].[DonjaVilicaBr], [p].[DonjaVilicaStanje], [p].[GronjaVilicaBr], [p].[GronjaVilicaStanje], [p].[Opis], [p].[TerminId]
+FROM [Pregled] AS [p]
+2023-07-28 16:10:08.929 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetTerminPregledDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:08.934 +02:00 [INF] Executed action backend.Controllers.PregledController.GetTerminiPregledi (backend) in 190.1688ms
+2023-07-28 16:10:08.934 +02:00 [INF] Executed endpoint 'backend.Controllers.PregledController.GetTerminiPregledi (backend)'
+2023-07-28 16:10:08.934 +02:00 [INF] Request GET /api/Pregled/getTerminiPregledi/16 completed in 194 ms.
+2023-07-28 16:10:08.935 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pregled/getTerminiPregledi/16 - - - 200 - application/json;+charset=utf-8 195.4580ms
+2023-07-28 16:10:10.582 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/getPacijenti - -
+2023-07-28 16:10:10.584 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:10.585 +02:00 [INF] Request GET /api/Pacijent/getPacijenti received.
+2023-07-28 16:10:10.585 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:10.585 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti() on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:10.586 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:10.600 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+2023-07-28 16:10:10.602 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:10.602 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 16.8612ms
+2023-07-28 16:10:10.602 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:10.602 +02:00 [INF] Request GET /api/Pacijent/getPacijenti completed in 17 ms.
+2023-07-28 16:10:10.602 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/getPacijenti - - - 200 - application/json;+charset=utf-8 20.6077ms
+2023-07-28 16:10:10.627 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/1/5/2 - -
+2023-07-28 16:10:10.627 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:10.627 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/1/5/2 received.
+2023-07-28 16:10:10.627 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:10.627 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:10.629 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:10.634 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2023-07-28 16:10:10.635 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:10.635 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 7.6506ms
+2023-07-28 16:10:10.635 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:10.636 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/1/5/2 completed in 8 ms.
+2023-07-28 16:10:10.636 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/1/5/2 - - - 200 - application/json;+charset=utf-8 9.0184ms
+2023-07-28 16:10:10.646 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - -
+2023-07-28 16:10:10.646 +02:00 [INF] CORS policy execution successful.
+2023-07-28 16:10:10.646 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 received.
+2023-07-28 16:10:10.646 +02:00 [INF] Executing endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:10.646 +02:00 [INF] Route matched with {action = "GetPacijenti", controller = "Pacijent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPacijenti(Int32, Int32, Int32) on controller backend.Controllers.PacijentController (backend).
+2023-07-28 16:10:10.648 +02:00 [INF] Entity Framework Core 6.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2023-07-28 16:10:10.652 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Adresa], [p].[DatumRodjenja], [p].[Drzava], [p].[Email], [p].[Grad], [p].[Ime], [p].[KorisnikId], [p].[Pol], [p].[Prezime], [p].[Telefon]
+FROM [Pacijent] AS [p]
+WHERE [p].[KorisnikId] = @__id_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-07-28 16:10:10.652 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.Dtos.GetPacijentDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-28 16:10:10.652 +02:00 [INF] Executed action backend.Controllers.PacijentController.GetPacijenti (backend) in 5.7141ms
+2023-07-28 16:10:10.653 +02:00 [INF] Executed endpoint 'backend.Controllers.PacijentController.GetPacijenti (backend)'
+2023-07-28 16:10:10.653 +02:00 [INF] Request GET /api/Pacijent/Pacijenti/Page/2/5/2 completed in 6 ms.
+2023-07-28 16:10:10.653 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7190/api/Pacijent/Pacijenti/Page/2/5/2 - - - 200 - application/json;+charset=utf-8 7.3937ms

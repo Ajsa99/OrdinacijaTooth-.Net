@@ -1,4 +1,5 @@
 ﻿using backend.Model;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace backend.Interface
 {
@@ -10,5 +11,6 @@ namespace backend.Interface
         void AddPacijent(Pacijent pacijent);
         void DeletePacijent(int id);
         void UpdatePacijent(Pacijent pacijent);
+        Task<IEnumerable<Pacijent>> Page(int page, int pageSize, int id);
     }
 }

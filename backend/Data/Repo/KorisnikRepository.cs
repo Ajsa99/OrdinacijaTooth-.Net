@@ -126,5 +126,6 @@ namespace backend.Data.Repo
         {
             return await dc.Korisnik.AnyAsync(x => x.Email == Email);
         }
+
     }
 }
